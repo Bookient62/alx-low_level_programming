@@ -10,5 +10,5 @@ void _puts(char *str)
 	{
 		_putcha(*str);
 	}
-	-putchar('\n');
+	_putchar('\n');
 }
