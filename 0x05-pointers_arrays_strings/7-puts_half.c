@@ -1,9 +1,9 @@
 #include "main.h"
+#include <string.h>
 /**
  *puts_half -> puts half
  *@str: string
  */
-
 void puts_half(char *str)
 {
 	int x, y, i;
