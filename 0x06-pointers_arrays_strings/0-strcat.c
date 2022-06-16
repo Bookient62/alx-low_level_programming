@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+
 /**
  * _strcat -> this function for more point and array
  * @dest: first param
@@ -17,7 +19,6 @@ char *_strcat(char *dest, char *src)
 		dest[len] = src[i];
 		len += 1;
 	}
-
 	dest[len] = '\0';
 	return (dest);
 }
