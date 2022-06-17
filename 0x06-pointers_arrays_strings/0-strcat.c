@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string>
 /**
  * _strcat -> this function for more point and array
  * @dest: first param
