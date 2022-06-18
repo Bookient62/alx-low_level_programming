@@ -1,26 +1,43 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
-* cap_string -> capitalization function
-* @x: string param
-* Return: capitalized version of the string
-*/
-char *cap_string(char *x)
+ * print_buffer - prints a buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: no return.
+ */
+void print_buffer(char *b, int size)
 {
-	char spc[] = {32, 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-	int len = 13;
-	int a = 0, i;
+	int j, k, l;
 
-	while (x[a])
+	if (size <= 0)
+		printf("\n");
+	else
 	{
-		i = 0;
-		while (i < len)
+		for (j = 0; j < size; j += 10)
 		{
-			if ((a == 0 || x[a - 1] == spc[i]) && (x[a] >= 97 && x[a] <= 122))
-				x[a] = x[a] - 32;
-			i++;
+			printf("%.8x:", j);
+			for (k = j; k < j + 10; k++)
+			{
+				if (k % 2 == 0)
+					printf(" ");
+				if (k < size)
+					printf("%.2x", *(b + k));
+				else
+					printf("  ");
+			}
+			printf(" ");
+			for (l = j; l < j + 10; l++)
+			{
+				if (l >= size)
+					break;
+				if (*(b + l) < 32 || *(b + l) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + l));
+			}
+			printf("\n");
 		}
-		a++;
 	}
-	return (x);
 }
