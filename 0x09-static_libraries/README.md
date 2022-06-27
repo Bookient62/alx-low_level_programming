@@ -1,1 +1,1 @@
-Read my file
+this all about static libraries
